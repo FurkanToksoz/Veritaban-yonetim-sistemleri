@@ -4,6 +4,7 @@ create database Library; -- bir kez database oluşturulurken çalıştırılır.
 use Kutuphane -- bu kütüpaheyi kullanarak aşağıdaki tabloları ekleyebilirsiniz.
 
 
+1) 
 create table Adresler(
 adresNo int not null identity(1,1) Primary Key,
 sehir nvarchar(100),
@@ -14,6 +15,9 @@ postaKodu int,
 ulke nvarchar(100)
 );
 
+
+
+2)
 create table uyeler(
 uyeNo int not null identity(1,1) Primary Key,
 uyeAdi nvarchar(50) not null,
@@ -25,6 +29,9 @@ adresNO int Foreign Key(adresNo) REFERENCES
 adresler(adresNO)
 );
 
+
+
+3) 
 create table kutuphane(
 kutuphaneNO int not null identity(1,1) primary key,
 kutuphaneIsmi nvarchar(100) not null,
@@ -32,6 +39,9 @@ aciklama nvarchar(150),
 adresNo int foreign key (adresNo) references adresler(adresNo)
 );
 
+
+
+4)
 create table kitaplar(
 ISBN int not null primary key,
 sayfaSayisi int,
@@ -40,6 +50,8 @@ yayinTarihi nvarchar(100)
 );
 
 
+
+5)
 create table emanet(
 emanetNO int not null identity(1,1) Primary Key,
 emanetTarihi nvarchar(100),
@@ -48,3 +60,48 @@ uyeNo int Foreign Key (uyeNo) references uyeler(uyeNo),
 kutuphaneNo int Foreign Key (kutuphaneNo) references kutuphane (kutuphaneNo),
 ISBN int Foreign Key (ISBN) references kitaplar(ISBN)
 );
+
+
+
+6)
+create table kitap_bulunur(
+kutuphaneNo int Foreign Key (kutuphaneNo) references kutuphane (kutuphaneNo),
+ISBN int Foreign Key (ISBN) references kitaplar(ISBN),
+Miktar int NOT NULL
+);
+
+
+
+7)
+create table Yazar(
+yazar_Id int NOT NULL primary key,
+Yazar_No int foreign key (Yazar_No) references Yazarlar(Yazar_No),
+ISBN int Foreign Key (ISBN) references kitaplar(ISBN),
+);
+
+
+
+8)
+create table Yazarlar(
+Yazar_No int NOT NULL primary key identity(1,1),
+yazar_adi nvarchar(100),
+yazar_soyadi nvarchar(100),
+);
+
+
+
+9)
+create table Kategoriler(
+kategori_no int NOT NULL primary key identity(1,1),
+kategori_adi nvarchar(100) NOT NULL,
+);
+
+
+
+10)
+create table katogori_bulunur(
+Id int NOT NULL primary key identity(1,1),
+ISBN int Foreign Key (ISBN) references kitaplar(ISBN),
+kategori_no int Foreign Key (kategori_no) references Kategoriler(kategori_no),
+);
+
