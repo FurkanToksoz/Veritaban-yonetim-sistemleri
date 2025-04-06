@@ -1,0 +1,113 @@
+select *from Adresler 
+insert into Adresler values ('Kayseri','Atatürk','Bahçeli Evler',12,38,'Türkiye');
+delete from Adresler where adresNo=2;
+insert into Adresler values ('Mersin','Kemal','Cadde1',16,33,'Türkiye');
+insert into Adresler values ('Paris','Cadde2','Mahalle1',125,65,'Fransa');insert into
+insert into Adresler values ('istanbul','Cadde3','Mahalle2',734,34,'Türkiye');
+insert into Adresler values ('Adana','Cadde4','Mahalle3',54,01,'Türkiye');
+insert into Adresler values ('Antalya','Cadde5','Mahalle4',176,07,'Türkiye');
+insert into Adresler values ('Artvin','Cadde6','Mahalle5',16,08,'Türkiye');
+insert into Adresler values ('Aydın','Cadde7','Mahalle6',146,09,'Türkiye');
+insert into Adresler values ('Balıkesir','Cadde8','Mahalle7',37,10,'Türkiye');
+
+select* from kitaplar;
+insert into kitaplar values (10,500,'Devlet Ana','15.04.2003');
+insert into kitaplar values (07,152,'Hayvan Çiftliği','25.07.2007');
+insert into kitaplar values (16,224,'Kuyucaklı Yusuf','05.08.1993');
+insert into kitaplar values (15,164,'Kürk Mantolu Madonna','30.08.1984');
+insert into kitaplar values (18,320,'Semerkant','29.11.1978');
+insert into kitaplar values (20,520,'Masumiyet Müzesi','15.02.2001');
+insert into kitaplar values (11,104,'Yılanı öldürseler','01.01.2004');
+insert into kitaplar values (21,144,'Sırça Köşk','01.10.2003');
+insert into kitaplar values (22,470,'İnce Mehmed','01.02.2004');
+insert into kitaplar values (23,500,'Kör Baykuş','15.08.2001');
+
+select* from kutuphane
+insert into kutuphane values ('Beyazsehir Kütüphane','Devlet Kütüphane',1);
+insert into kutuphane values ('Nova Kütüphane','Büyük-geniş',2);
+insert into kutuphane values ('Paris Kütüphane','Devlet Kütüphane',3);
+insert into kutuphane values ('Kadıköy Kütüphane','Devlet Kütüphane',4);
+insert into kutuphane values ('İstanbul Kütüphane','Devlet Kütüphane',5);
+insert into kutuphane values ('Adana Kütüphane','Devlet Kütüphane',6);
+insert into kutuphane values ('Antalya Kütüphane','Devlet Kütüphane',7);
+insert into kutuphane values ('Artvin Kütüphane','Devlet Kütüphane',8);
+insert into kutuphane values ('Aydın Kütüphane','Devlet Kütüphane',9);
+insert into kutuphane values ('Balıkesir Kütüphane','Devlet Kütüphane',10);
+
+select*from kitap_bulunur;
+insert into kitap_bulunur values (1,10,340);
+insert into kitap_bulunur values (2,7,240);
+insert into kitap_bulunur values (3,16,140);
+insert into kitap_bulunur values (4,15,320);
+insert into kitap_bulunur values (5,18,130);
+insert into kitap_bulunur values (6,20,250);
+insert into kitap_bulunur values (7,11,450);
+insert into kitap_bulunur values (8,21,230);
+insert into kitap_bulunur values (9,22,630);
+insert into kitap_bulunur values (10,23,240);
+
+select*from uyeler;
+insert into uyeler values ('Furkan','Toksöz','***_***@hotmail.com','***********','E',1);
+insert into uyeler values ('Fatma','Avcı','***_***@hotmail.com','***********','K',2);
+insert into uyeler values ('Ali','Öztürk','***_***@hotmail.com','***********','E',3);
+insert into uyeler values ('Mustafa','Türk','***_***@hotmail.com','***********','E',4);
+insert into uyeler values ('Sümeyye','Yılmaz','***_***@hotmail.com','***********','K',5);
+insert into uyeler values ('Ayşe','Mutlu','***_***@hotmail.com','***********','K',6);
+insert into uyeler values ('Emir','Demir','***_***@hotmail.com','***********','E',7);
+insert into uyeler values ('Emine','Erdoğan','***_***@hotmail.com','***********','K',8);
+insert into uyeler values ('Samet','Altın','***_***@hotmail.com','***********','E',9);
+insert into uyeler values ('Mehmet','Baş','***_***@hotmail.com','***********','E',10);
+
+Select*from Yazarlar;
+insert into Yazarlar values ('Kemal','Tahir');
+insert into Yazarlar values ('Gorge','Orwell');
+insert into Yazarlar values ('Sabahattin','Ali');
+insert into Yazarlar values ('Sabahattin','Ali');
+insert into Yazarlar values ('Amin','Maalouf');
+insert into Yazarlar values ('Orhan','Pamuk');
+insert into Yazarlar values ('Yaşar','Kemal');
+insert into Yazarlar values ('Sabahattin','Ali');
+insert into Yazarlar values ('Yaşar','Kemal');
+insert into Yazarlar values ('Sadık','Hidayet');
+
+Select*from Yazar;
+insert into Yazar values (1,1,10);
+insert into Yazar values (2,2,07);
+insert into Yazar values (3,3,16);
+insert into Yazar values (4,4,15);
+insert into Yazar values (5,5,18);
+insert into Yazar values (6,6,20);
+insert into Yazar values (7,7,11);
+insert into Yazar values (8,8,21);
+insert into Yazar values (9,9,22);
+insert into Yazar values (10,10,23);
+
+select*from Kategoriler;
+insert into Kategoriler values ('Çocuk');
+insert into Kategoriler values ('Roman');
+insert into Kategoriler values ('Macera');
+insert into Kategoriler values ('Bilim Kurgu');
+
+select*from katogori_bulunur;
+insert into katogori_bulunur values (10,2);
+insert into katogori_bulunur values (07,3);
+insert into katogori_bulunur values (16,3);
+insert into katogori_bulunur values (15,2);
+insert into katogori_bulunur values (18,4);
+insert into katogori_bulunur values (20,2);
+insert into katogori_bulunur values (11,1);
+insert into katogori_bulunur values (21,2);
+insert into katogori_bulunur values (22,3);
+insert into katogori_bulunur values (23,2);
+
+select*from emanet;
+insert into emanet values ('04.10.2024','05.10.2024',1,1,10);
+insert into emanet values ('06.20.2024','07.20.2024',2,2,07);
+insert into emanet values ('10.10.2024','11.14.2025',3,3,16);
+insert into emanet values ('13.10.2022','13.10.2023',4,4,15);
+insert into emanet values ('04.10.2021','21.10.2022',5,5,18);
+insert into emanet values ('07.10.2024','19.10.2025',6,6,20);
+insert into emanet values ('23.10.2023','12.10.2024',7,7,11);
+insert into emanet values ('30.10.2022','02.10.2023',8,8,21);
+insert into emanet values ('12.10.2025','10.10.2026',9,9,22);
+insert into emanet values ('17.10.2023','03.10.2024',10,10,23);
