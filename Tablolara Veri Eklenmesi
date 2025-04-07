@@ -2,7 +2,7 @@ select *from Adresler
 insert into Adresler values ('Kayseri','Atatürk','Bahçeli Evler',12,38,'Türkiye');
 delete from Adresler where adresNo=2;
 insert into Adresler values ('Mersin','Kemal','Cadde1',16,33,'Türkiye');
-insert into Adresler values ('Paris','Cadde2','Mahalle1',125,65,'Fransa');insert into
+insert into Adresler values ('Paris','Cadde2','Mahalle1',125,65,'Fransa');
 insert into Adresler values ('istanbul','Cadde3','Mahalle2',734,34,'Türkiye');
 insert into Adresler values ('Adana','Cadde4','Mahalle3',54,01,'Türkiye');
 insert into Adresler values ('Antalya','Cadde5','Mahalle4',176,07,'Türkiye');
