@@ -1,0 +1,38 @@
+create database galeri
+create table Musteri(
+Mno int primary key identity(1,1),
+Madi nvarchar(50),
+Madres nvarchar(50),
+Mtelefon int
+)
+
+create table Araclar(
+araç_no int primary key identity(1,1),
+model nvarchar(50),
+marka nvarchar(50),
+plaka nvarchar(50),
+fiyat int
+)
+
+create table Satislar(
+satisNo int primary key not null,
+Mno int foreign key (Mno) references Musteri(Mno),
+araç_no int foreign key (araç_no) references Araclar(araç_no),
+sat_tarih nvarchar(50),
+Sfiyat int
+)
+
+insert into Musteri values('Fatma Nur','Kayseri',32564)
+insert into Musteri values('Furkan','Kayseri',52325)
+insert into Musteri values('Ali Burak','Eskişehir',62364)
+select*from Musteri
+
+insert into Araclar values('2022','Egea','ADR',820.000)
+insert into Araclar values('2024','BMW','WWE',2500)
+insert into Araclar values('2017','Ford Courler','AGN',840)
+select*from Araclar
+
+insert into Satislar values(1,1,1,'24.04.2025',800.000)
+insert into Satislar values(2,2,2,'14.02.2025',912.000)
+insert into Satislar values(3,3,3,'03.10.2025',980.000)
+select*from Satislar
