@@ -29,6 +29,28 @@ WHERE s.Fiyat < (
     FROM alislar 
 );
 
+-- 4. Opel marka araç yapılan satışların ve alımların hangi müşterilerle yapıldığını bulmak için
+select *
+FROM Musteri
+where Mno IN (
+    select Mno
+    from Satis
+    where Aracno IN (
+        select Aracno
+        from Arac
+        where Marka like '%Opel%'
+    )
+)
+OR Mno IN (
+    SELECT Mno
+    FROM Alim
+    WHERE Aracno IN (
+        SELECT Aracno
+        FROM Arac
+        WHERE Marka LIKE '%Opel%'
+    )
+);
+
 -- 5. Araç fiyatı 20000 den yüksek olan araçların hangi fiyata satıldığını bulmak için gerekli SQL ifadesiniz yazınız. 
 (
 select Sfiyat
