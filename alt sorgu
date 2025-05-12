@@ -101,29 +101,26 @@ WHERE s.Fiyat < (
 -- 4. Opel marka araç yapılan satışların ve alımların hangi müşterilerle yapıldığını bulmak için
 select *
 FROM Musteri
-where Mno IN (
-    select Mno
-    from Satis
-    where Aracno IN (
-        select Aracno
-        from Arac
-        where Marka like '%Opel%'
+where Mno in (
+select Mno from Satis
+where Aracno in (
+select Aracno
+from Arac
+where Marka like '%Opel%'
     )
 )
 or Mno in (
-    select Mno
-    from Alim
-    where Aracno in (
-        select Aracno
-        from Arac
-        where Marka like '%Opel%'
+select Mno from Alim
+where Aracno in (
+select Aracno
+from Arac
+where Marka like '%Opel%'
     )
 );
 
 -- 5. Araç fiyatı 20000 den yüksek olan araçların hangi fiyata satıldığını bulmak için gerekli SQL ifadesiniz yazınız. 
 (
-select Sfiyat
-from Satis
+select Sfiyat from Satis
 where Satis.Aracno = Arac.Aracno
 limit 1
 ) as SatisFiyati
@@ -132,8 +129,7 @@ where Fiyat > 20000;
 
 -- 6. Turhal ve Amasya’ya yapılan satışların toplam tutarını azalan sırada listelemek için gerekli SQL ifadesiniz yazınız. 
 (
-select sum(Sfiyat)
-from Satis
+select sum(Sfiyat) from Satis
 where Satis.Mno = M.Mno
 ) as ToplamSatis
 from Musteri M
