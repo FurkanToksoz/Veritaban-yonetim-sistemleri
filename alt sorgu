@@ -41,13 +41,13 @@ where Mno IN (
         where Marka like '%Opel%'
     )
 )
-OR Mno IN (
-    SELECT Mno
-    FROM Alim
-    WHERE Aracno IN (
-        SELECT Aracno
-        FROM Arac
-        WHERE Marka LIKE '%Opel%'
+or Mno in (
+    select Mno
+    from Alim
+    where Aracno in (
+        select Aracno
+        from Arac
+        where Marka like '%Opel%'
     )
 );
 
