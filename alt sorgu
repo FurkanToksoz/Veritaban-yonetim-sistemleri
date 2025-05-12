@@ -71,8 +71,7 @@ select*from Satış
 select (musteri.Madi +' '+ musteri.Msoyadi) as satilan_araclar
 from satislar
 Inner Join musteri on musteri.Mno = satislar.MNo
-where aracNo =
-(select AracNo from satislar
+where aracNo = (select AracNo from satislar
 where MNo =(select Mno from musteri 
 where Madi ='Sıla' and Msoyadi ='Aydoğdu'))
 
