@@ -1,3 +1,72 @@
+create database galeri;
+
+create table Müsteri(
+M_No int not null primary key identity(1,1),
+M_Adi nvarchar(50),
+M_Soyadi  nvarchar(50),
+M_Adres nvarchar(50),
+M_Telefon nvarchar(100)
+);
+
+
+create table Arac(
+Arac_No int not null primary key identity(1,1),
+Yıl int,
+Marka  nvarchar(50),
+Model nvarchar(50),
+Plaka nvarchar(100),
+Fiyat nvarchar(50)
+);
+
+create table Satış(
+Sat_No int not null primary key identity(1,1),
+M_No int foreign key(M_No) references Müsteri(M_No),
+Arac_No int foreign key(Arac_No) references Arac(Arac_No),
+Sat_Tarih nvarchar(50),
+Sat_Fiyat int
+);
+
+create table Alım(
+Alim_No int not null primary key identity(1,1),
+M_No int foreign key(M_No) references Müsteri(M_No),
+Arac_No int foreign key(Arac_No) references Arac(Arac_No),
+Alim_Tarih nvarchar(50),
+Alim_Fiyat int
+);
+
+insert into Müsteri values('Furkan','Toksöz','Kayseri/Kocasinan','2456543054')
+insert into Müsteri values('Ayşe','Kılıç','Yozgat/Sorgun','432582052')
+insert into Müsteri values('Ahmet','Candan','Tokat/Turhal','746784574')
+insert into Müsteri values('Murat','Kara','Tokat/Turhal','243889959')
+insert into Müsteri values('Mehmet','Demir','İstanbul/Beşiktaş','9637282052')
+insert into Müsteri values('Ahmet','Yılmaz','Tokat/Zile','3546789858')
+insert into Müsteri values('Emine','Boz','Sivas/Şarkışla','6551719134')
+select*from Müsteri
+
+
+
+
+insert into Arac values ('2021','Fiat','Egea','05 OURB 5538','870000');
+insert into Arac values ('2019','Toyota','Corolla','38 VYRY 3838','123000');
+insert into Arac values ('2021','Ford','Courier','05 BPAY 1532','950000');
+insert into Arac values ('2018','BMW','520d','38 KJLT 9643','1260000');
+insert into Arac values ('2016','Fiat','Linea','07 IYRY 3512','680000');
+select*from Arac
+
+insert into Alım values('1','5','12.01.2025','740000')
+insert into Alım values('4','3','19.07.2025','850000')
+insert into Alım values('5','2','27.10.2024','830000')
+insert into Alım values('6','4','18.05.2024','1200000')
+insert into Alım values('7','1','23.02.2025','695000')
+select*from Alım
+
+
+insert into Satış values('1','4','27.12.2024','1150000')
+insert into Satış values('4','5','20.02.2025','465000')
+insert into Satış values('3','1','12.03.2025','810000')
+insert into Satış values('6','2','01.02.2025','918000')
+select*from Satış
+
 !--1.	Sıla Aydoğdu'ya satılan aracın aynısından başka hangi müşterilere satıldığını bulmak için kullanılacak SQL ifadesiniz yazınız.
 select (musteri.Madi +' '+ musteri.Msoyadi) as satilan_araclar
 from satislar
